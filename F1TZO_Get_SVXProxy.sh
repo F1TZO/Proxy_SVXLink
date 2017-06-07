@@ -28,7 +28,7 @@
 LAT=9999
 BLAT=9999
 
-lynx -dump http://www.echolink.org/proxylist.jsp | grep Ready | grep 8100 | awk -F '[[:space:]][[:space:]]+' '{ print $3 }' | grep -v ":" | grep -v "192." | grep -v "44."> /tmp/List-Free.txt
+lynx -dump http://www.echolink.org/proxylist.jsp | grep Ready | grep 8100 | gawk -F '[[:space:]][[:space:]]+' '{ print $3 }' | grep -v ":" | grep -v "192." | grep -v "44."> /tmp/List-Free.txt
 NBP=`wc ./List-Free.txt | awk '{ print $1 }'`
 
 while read PROXY
